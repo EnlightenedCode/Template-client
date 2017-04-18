@@ -11,8 +11,6 @@ export class templateApp {
     public events: Events,
     public platform: Platform
   ) {
-    console.log('hello');
-    console.log('hello again');
     this.platformReady();
   }
 
