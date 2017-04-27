@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NgRedux, select } from 'ng2-redux';
+import { NgRedux, select } from '@angular-redux/store';
+import { Observable } from 'rxjs/Observable';
 import { SharedWorkflows } from '../../providers/workflows/sharedWorkflows';
+import { ProductWorkflow } from '../../providers/workflows/productWorkflow';
 import { ConsoleLogService } from '../../providers/services/logger';
 import { RootState } from '../../store/index';
 
@@ -10,12 +12,14 @@ import { RootState } from '../../store/index';
 })
 
 export class AboutPage {
-
+  @select(['product', 'allProducts']) products$: Observable<any[]>;
   public currentPageState;
   public pageName = 'About';
+  public products;
   constructor(
     private logger: ConsoleLogService,
     private _shared: SharedWorkflows,
+    private _prod: ProductWorkflow,
     private ngRedux: NgRedux<RootState>,
   ) {
     let app_state = this.ngRedux.select(state => state.app);
@@ -24,11 +28,12 @@ export class AboutPage {
         this.currentPageState = data.get('page');
       }
     })
+    this._prod.getProducts().subscribe(() => {
+      console.log('finished');
+    })
   }
 
   ionViewDidEnter() {
-    console.log(this.currentPageState);
-    console.log('state');
     if (this.currentPageState !== this.pageName) {
       this._shared.goToPage(this.pageName);
     }

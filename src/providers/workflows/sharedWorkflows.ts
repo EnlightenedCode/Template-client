@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/Rx';
-import { NgRedux } from 'ng2-redux';
+import { NgRedux } from '@angular-redux/store';
 import { RootState } from '../../store/index';
+import { FirebaseService } from '../services/firebaseService';
 
 @Injectable()
 export class SharedWorkflows {
@@ -10,6 +11,22 @@ export class SharedWorkflows {
         private ngRedux: NgRedux<RootState>
     ) {
 
+    }
+
+    errorModalShow(errorMessage = undefined) {
+        this.ngRedux.dispatch({
+            type: 'SHOW_ERROR_MODAL',
+            payload: {
+                message: (errorMessage) ? errorMessage : 'Server Error'
+            }
+        })
+    }
+
+
+    errorModalHide() {
+        this.ngRedux.dispatch({
+            type: 'HIDE_ERROR_MODAL'
+        })
     }
 
     loaderShow() {
@@ -24,7 +41,7 @@ export class SharedWorkflows {
         })
     }
 
-    goToPage(page, pageParams = {}) {
+    goToPage(page, pageParams = { index: 0 }) {
         this.ngRedux.dispatch({
             type: 'GO_TO_PAGE',
             payload: {

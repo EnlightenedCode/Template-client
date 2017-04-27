@@ -3,7 +3,7 @@ import { LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'loader-component',
-  templateUrl: 'loader.component.html'
+  templateUrl: 'loader.component.html',
 })
 
 export class LoaderComponent implements OnInit {
@@ -18,6 +18,11 @@ export class LoaderComponent implements OnInit {
   }
 
   ngOnInit() {
+
+  }
+
+  ngOnChanges() {
+    console.log('START UP LOADER');
     console.log(this.visible);
     if (this.visible) {
       console.log('in this now');

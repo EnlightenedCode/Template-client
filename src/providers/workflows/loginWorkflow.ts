@@ -1,7 +1,7 @@
 import { Injectable, ViewChild } from '@angular/core';
 import 'rxjs/Rx';
 import { Response } from '@angular/http';
-import { NgRedux } from 'ng2-redux';
+import { NgRedux } from '@angular-redux/store';
 import { RootState } from '../../store/index';
 import { FirebaseService } from '../services/firebaseService';
 import { SharedWorkflows } from './sharedWorkflows';
@@ -27,6 +27,7 @@ export class LoginWorkflow {
                 observer.next('done');
             }, function (err) {
                 shrWrkFlw.loaderHide();
+                shrWrkFlw.errorModalShow('Unable to login with given Login / Password.');
                 observer.error(err);
             });
         });

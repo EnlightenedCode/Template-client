@@ -18,10 +18,13 @@
     "node_modules",
     "www"
   ],
-  "typeRoots": [ "../node_modules/@types" ],
-    "types": [
-        "jasmine", "hammerjs"
-    ],
+  "typeRoots": [
+    "../node_modules/@types"
+  ],
+  "types": [
+    "jasmine",
+    "hammerjs"
+  ],
   "compileOnSave": false,
   "atom": {
     "rewriteTsconfig": false

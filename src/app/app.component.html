@@ -1,3 +1,4 @@
+<error-modal-component class="modal-styles" [visible]="errorModal$ | async" [message]="errorMessage$ | async" (dismissedError)="dismissErrorModal()"></error-modal-component>
 <loader-component [visible]="loader$ | async"></loader-component>
 <ion-split-pane [when]="shouldShowMenu()">
     <ion-menu id="loggedOutMenu" [content]="content">

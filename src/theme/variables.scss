@@ -39,6 +39,12 @@ $colors: (
   facebook:   #3b5998
 );
 
+$modal-inset-width: 400px;
+
+$modal-inset-height-small: 400px;
+
+$modal-inset-height-large: 400px;
+
 $split-pane-side-max-width : 250px;
 
 
@@ -57,7 +63,6 @@ $toolbar-md-background:                   color($colors, primary);
 
 // Change the color of the segment button text
 $toolbar-md-active-color:                 #fff;
-
 
 // App Windows Variables
 // --------------------------------------------------

@@ -3,7 +3,7 @@ import { LoginWorkflow } from '../../providers/workflows/loginWorkflow';
 import { SharedWorkflows } from '../../providers/workflows/sharedWorkflows';
 import { ConsoleLogService } from '../../providers/services/logger';
 import { Observable } from "rxjs";
-import { NgRedux, select } from 'ng2-redux';
+import { NgRedux, select } from '@angular-redux/store';
 import { RootState } from '../../store/index';
 
 @Component({
@@ -40,8 +40,6 @@ export class HomePage {
   }
 
   ionViewDidEnter() {
-    console.log(this.currentPageState);
-    console.log('state');
     if (this.currentPageState !== this.pageName) {
       this._shared.goToPage(this.pageName);
     }

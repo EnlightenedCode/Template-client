@@ -5,6 +5,11 @@
     </button>
   </ion-navbar>
 </ion-header>
-<ion-content no-bounce>
+<ion-content no-bounce class="about-page">
   <p>About Page </p>
+  <ul>
+    <li *ngFor="let product of products$ | async">
+      {{ product.$value }}
+    </li>
+  </ul>
 </ion-content>

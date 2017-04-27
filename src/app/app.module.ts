@@ -5,14 +5,19 @@ import { IonicApp, IonicModule, NavController } from 'ionic-angular';
 import { templateApp } from './app.component';
 import { HomePage } from '../pages/home/home.component';
 import { AboutPage } from '../pages/about/about.component';
-import { NgRedux } from 'ng2-redux';
-import { DevToolsExtension, NgReduxModule } from 'ng2-redux';
+import { NgRedux } from '@angular-redux/store';
+import { DevToolsExtension, NgReduxModule } from '@angular-redux/store';
 import { CommonComponentsModule } from '../commonComponents/commoncomponents.module';
 import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { LoginWorkflow } from '../providers/workflows/loginWorkflow';
+import { ProductWorkflow } from '../providers/workflows/productWorkflow';
 import { SharedWorkflows } from '../providers/workflows/sharedWorkflows';
+import { ProductService } from "../providers/services/productService";
 import { ConsoleLogService } from "../providers/services/logger";
 import { Logger } from "../providers/services/default-log-service";
+import { WindowRef } from '../store/windowClass';
+import { ErrorModalComponent } from '../commonComponents/errorModal/error-modal.component';
+import { ErrorComponent } from '../commonComponents/errorModal/error-modal.component';
 
 const myFirebaseConfig = {
     apiKey: 'AIzaSyBfGF30lqLx6Mm-nVfSwb7rOuOnZBYmnkY',
@@ -58,6 +63,8 @@ const myFirebaseAuthConfig = {
     bootstrap: [IonicApp],
     entryComponents: [
         templateApp,
+        ErrorModalComponent,
+        ErrorComponent,
         HomePage,
         AboutPage
     ],
@@ -66,7 +73,7 @@ const myFirebaseAuthConfig = {
             provide: Logger,
             useClass: ConsoleLogService
         },
-        DevToolsExtension, LoginWorkflow, SharedWorkflows, ConsoleLogService]
+        DevToolsExtension, LoginWorkflow, SharedWorkflows, ConsoleLogService, ProductWorkflow, ProductService, WindowRef]
 })
 
 export class AppModule {
