@@ -12,12 +12,13 @@ log.txt
 *.sublime-workspace
 .vscode/
 npm-debug.log*
-.reports/
-.screenshots/
+reports/
+screenshots/
 .idea/
 .sass-cache/
 .tmp/
 .bin/
+bin/
 .versions/
 coverage/
 dist/
