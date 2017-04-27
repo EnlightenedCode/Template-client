@@ -24,6 +24,7 @@
     "@angular/http": "4.0.0",
     "@angular/platform-browser": "4.0.0",
     "@angular/platform-browser-dynamic": "4.0.0",
+    "@angular/router": "^4.1.0",
     "@ionic-native/core": "3.4.2",
     "@ionic-native/splash-screen": "3.4.2",
     "@ionic-native/status-bar": "3.4.2",
@@ -46,9 +47,23 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
+    "@angular/cli": "^1.0.1",
+    "@types/jasmine": "^2.5.47",
+    "@types/node": "^7.0.14",
     "chai": "^3.5.0",
+    "codecov": "^2.1.0",
+    "jasmine-core": "^2.6.1",
+    "jasmine-spec-reporter": "^4.0.0",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha-reporter": "^2.2.3",
+    "karma-remap-istanbul": "^0.6.0",
     "mocha": "^3.3.0",
-    "selenium-download": "^2.0.10"
+    "selenium-download": "^2.0.10",
+    "ts-node": "^3.0.2",
+    "tslint": "^5.1.0",
+    "tslint-eslint-rules": "^4.0.0"
   },
   "description": "template project",
   "cordovaPlugins": [
