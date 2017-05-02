@@ -4,6 +4,14 @@ import { NgRedux } from '@angular-redux/store';
 import { RootState } from '../../store/index';
 import { FirebaseService } from '../services/firebaseService';
 
+interface ISharedWorkflows {
+    errorModalShow: void;
+    errorModalHide: void;
+    loaderShow: void;
+    loaderHide: void;
+    goToPage: void;
+}
+
 @Injectable()
 export class SharedWorkflows {
 

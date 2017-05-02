@@ -61,6 +61,9 @@ export class templateApp {
             middleware,
             enhancers
         );
+    }
+
+    ngOnInit() {
         this.sharedWrkflws.loaderHide();
         this.applyStateToWindow(this.win.nativeWindow);
 
@@ -87,13 +90,6 @@ export class templateApp {
                 }
             }
         });
-        // this.ngRedux.dispatch({
-        //   type: 'LOADER_SHOW'
-        // })
-    }
-
-    ngOnInit() {
-
     }
 
     dismissErrorModal() {
